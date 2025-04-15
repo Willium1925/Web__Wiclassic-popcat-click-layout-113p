@@ -12,45 +12,79 @@
       font-family: sans-serif;
     }
 
+    /*.container {*/
+    /*  display: flex;*/
+    /*  flex-direction: column;*/
+    /*  align-items: center;*/
+    /*}*/
+
+    /*使用網格布局 2x2 將 .title 使用上方兩隔，並將 .cat-img 使用下方兩隔*/
+
+    /*!* 2. 標題圖片 *!*/
+    /*.title {*/
+    /*  !* 上方間距 *!*/
+    /*  margin-top: 2em;*/
+
+    /*  !* 寬度設定 *!*/
+    /*  width: 80%;*/
+    /*  max-width: 600px;*/
+    /*}*/
+
+    /*!* 3. 貓咪圖片 *!*/
+    /*.cat-img {*/
+    /*  !* 填滿剩餘空間 *!*/
+    /*  !*flex: 1;*!*/
+    /*  height: 100vh;*/
+
+    /*  !* 寬度設定 *!*/
+    /*  width: 100%;*/
+    /*  max-width: 800px;*/
+
+    /*  !* 背景圖片設定 *!*/
+    /*  background-position: bottom;*/
+    /*  background-size: contain;*/
+    /*  background-repeat: no-repeat;*/
+
+    /*  !* 文字置中 *!*/
+    /*  text-align: center;*/
+    /*  !* 文字樣式 *!*/
+    /*  color: white;*/
+    /*  font-size: 80px;*/
+    /*  font-weight: 900;*/
+    /*  -webkit-text-stroke: 3px black;*/
+
+    /*}*/
+
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: grid;
+      grid-template-rows: 1fr 1fr; /* 定义两行 */
+      grid-template-columns: 1fr 1fr; /* 定义两列 */
+      height: 100vh; /* 让容器占满视口高度 */
+      justify-items: center; /* 水平居中 */
     }
 
-    /* 2. 標題圖片 */
     .title {
-      /* 上方間距 */
+      grid-column: 1 / 3; /* 占据第一行的两列 */
+      grid-row: 1 / 2; /* 占据第一行 */
       margin-top: 2em;
-
-      /* 寬度設定 */
       width: 80%;
       max-width: 600px;
     }
 
-    /* 3. 貓咪圖片 */
     .cat-img {
-      /* 填滿剩餘空間 */
-      /*flex: 1;*/
-      height: 100vh;
-
-      /* 寬度設定 */
+      grid-column: 1 / 3; /* 占据第二行的两列 */
+      grid-row: 2 / 3; /* 占据第二行 */
+      height: 100%;
       width: 100%;
       max-width: 800px;
-
-      /* 背景圖片設定 */
       background-position: bottom;
       background-size: contain;
       background-repeat: no-repeat;
-
-      /* 文字置中 */
       text-align: center;
-      /* 文字樣式 */
       color: white;
       font-size: 80px;
       font-weight: 900;
       -webkit-text-stroke: 3px black;
-
     }
 
     /* 4. 貓咪狀態 */
